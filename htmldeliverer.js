@@ -1,7 +1,15 @@
 fetch("https://api.github.com/repos/RetroStash/rsSINGLEFILE/commits")
   .then(res => res.json())
   .then(data => {
-    const fullSHA = data[0].sha;
-    window.location.replace(`https://cdn.jsdelivr.net/gh/RetroStash/rsSINGLEFILE@${fullSHA}/index.html`);
+    const sha = data[0].sha;
+    return fetch(
+      `https://cdn.jsdelivr.net/gh/RetroStash/rsSINGLEFILE@${sha}/index.html`
+    );
+  })
+  .then(res => res.text())
+  .then(html => {
+    document.open();
+    document.write(html);
+    document.close();
   })
   .catch(err => console.error(err));
