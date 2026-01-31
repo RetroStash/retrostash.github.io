@@ -1,4 +1,4 @@
-fetch("https://cdn.jsdelivr.net/gh/RetroStash/rsSINGLEFILE@7bfd2795b0e46324022c45b2ccda280c30959837/index.html")
+fetch("https://cdn.jsdelivr.net/gh/RetroStash/rsSINGLEFILE@4ad02cfb08c1d2e4a0b703467fb089e87ed3609e/index.html")
   .then(r => r.text())
   .then(html => {
     document.open();
